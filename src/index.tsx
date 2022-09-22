@@ -6,6 +6,25 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import Profile from "./components/Profile/Profile";
+import State from "./components/redux/State";
+import state from "./components/redux/State";
+
+export type PostType={
+    id:number
+    message:string
+    likesCount:number
+}
+export type DialogType={
+    id:number
+    name:string
+}
+export type MessageType={
+   id:number
+   message:string
+}
+
+
+
 
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
@@ -13,8 +32,8 @@ const root = ReactDOM.createRoot(
 root.render(
     <BrowserRouter>
         <React.StrictMode>
-
-          <App/>
+{/*<Route path={'/Hello'} />*/}
+          <App state={state} />
         </React.StrictMode>
     </BrowserRouter>
 );

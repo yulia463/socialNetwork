@@ -1,24 +1,34 @@
 import React from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
+import {PostType} from "../../../index";
+
+type MyPostsProps = {
+    posts:Array <PostType>
+    id:number
+    message:string
+    likesCount:number
+}
+
+const MyPosts = (props: MyPostsProps) => {
 
 
-const MyPosts = () => {
-    return <div>
-        My Posts
+
+let postsElements =
+    props.posts.map((p) => <Post likesCount={p.likesCount} title={p.message}/>)
+
+    return <div className={s.postsBlock}>
+        <h3>My Posts</h3>
         <div>
+            <div>
             <textarea></textarea>
+            </div>
+            <div>
             <button>Add post</button>
-
+            </div>
         </div>
         <div className={s.posts}>
-            <Post likeCaunt={15} title={"post 1"}/>
-            <Post likeCaunt={20} title={"post 2"}/>
-            <Post likeCaunt={33} title={"post 3"}/>
-            <Post likeCaunt={19} title={"post 4"}/>
-            <Post likeCaunt={78} title={"post 5"}/>
-            <Post likeCaunt={89} title={"post 6"}/>
-
+            {postsElements}
         </div>
     </div>
 

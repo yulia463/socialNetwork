@@ -1,19 +1,18 @@
 import React from "react";
 import s from "./Profile.module.css";
 import MyPosts from "./MyPosts/MyPosts";
+import ProfileInfo from "./ProfileInfo/ProfileInfo";
+import {PostType} from "../../index";
 
-const Profile = () => {
+type ProfileProps = {
+    posts: Array <PostType>
+}
+
+const Profile = (props: ProfileProps) => {
+
     return <div>
-        <div>
-
-            <img style={{width: '100%'}}
-                 src="https://www.etoretro.ru/data/media/1185/143780636038c.jpg"
-            />
-        </div>
-        <div>
-            ava+description
-        </div>
-        <MyPosts/>
+        <ProfileInfo/>
+        <MyPosts posts={props.posts} id={5} message={'ksks'} likesCount={84}/>
     </div>
 
 };

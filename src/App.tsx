@@ -6,9 +6,17 @@ import Nav from "./components/Nav/Nav";
 import Profile from "./components/Profile/Profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Route, Routes} from "react-router-dom";
+import {DialogType, MessageType, PostType} from "./index";
+import {StateType} from "./components/redux/State";
 
 
-function App() {
+type AppProps = {
+    state:StateType
+}
+
+
+function App(props: AppProps) {
+
     return (
         <div className="app-wrapper">
             <Header/>
@@ -17,8 +25,8 @@ function App() {
                 {/*<Dialogs/>*/}
                 {/*<Profile/>*/}
                 <Routes>
-                    <Route path={'/dialogs'} element={<Dialogs/>}/>
-                    <Route path={'/profile'} element={<Profile/>}/>
+                    <Route path={'/dialogs'} element={<Dialogs messagesData={props.state.messagesPage.messagesData} dialogsData={props.state.messagesPage.dialogsData}/>}/>
+                    <Route path={'/profile'}   element={<Profile posts={props.state.profilePage.posts}/>}/>
                 </Routes>
             </div>
         </div>
