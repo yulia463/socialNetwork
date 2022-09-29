@@ -1,30 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import s from "./MyPosts.module.css";
 import Post from "./Post/Post";
 import {PostType} from "../../../index";
 
 type MyPostsProps = {
-    posts:Array <PostType>
-    id:number
-    message:string
-    likesCount:number
+    posts: Array<PostType>
+    id: number
+    message: string
+    likesCount: number
 }
 
 const MyPosts = (props: MyPostsProps) => {
+let [text,setText]=useState('')
+
+    let postsElements =
+        props.posts.map((p) => <Post likesCount={p.likesCount} title={p.message}/>)
 
 
 
-let postsElements =
-    props.posts.map((p) => <Post likesCount={p.likesCount} title={p.message}/>)
+
+    const addPost = () => {
+        alert(text);
+
+    }
 
     return <div className={s.postsBlock}>
         <h3>My Posts</h3>
         <div>
             <div>
-            <textarea></textarea>
+                <textarea value={text} onChange={(e)=>{setText(e.currentTarget.value)}} ></textarea>
             </div>
             <div>
-            <button>Add post</button>
+                <button onClick={addPost}>Add post</button>
             </div>
         </div>
         <div className={s.posts}>
