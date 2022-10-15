@@ -8,6 +8,7 @@ type MyPostsProps = {
     id: number
     message: string
     likesCount: number
+    addPost:(postMessage:any)=>void
 }
 
 const MyPosts = (props: MyPostsProps) => {
@@ -20,7 +21,10 @@ let [text,setText]=useState('')
 
 
     const addPost = () => {
-        alert(text);
+        // let text = newPostElement.current.value;
+        props.addPost(text);
+        setText('');
+        // newPostElement.current.value = '';
 
     }
 

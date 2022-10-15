@@ -7,11 +7,12 @@ import Profile from "./components/Profile/Profile";
 import {Dialogs} from "./components/Dialogs/Dialogs";
 import {Route, Routes} from "react-router-dom";
 import {DialogType, MessageType, PostType} from "./index";
-import {StateType} from "./components/redux/State";
+import {addPost, StateType} from "./components/redux/State";
 
 
 type AppProps = {
-    state:StateType
+    state: StateType
+    addPost:(postMessage:any)=>void
 }
 
 
@@ -25,8 +26,11 @@ function App(props: AppProps) {
                 {/*<Dialogs/>*/}
                 {/*<Profile/>*/}
                 <Routes>
-                    <Route path={'/dialogs'} element={<Dialogs messagesData={props.state.messagesPage.messagesData} dialogsData={props.state.messagesPage.dialogsData}/>}/>
-                    <Route path={'/profile'}   element={<Profile posts={props.state.profilePage.posts}/>}/>
+                    <Route path={'/dialogs'} element={<Dialogs messagesData={props.state.messagesPage.messagesData}
+                                                               dialogsData={props.state.messagesPage.dialogsData}/>}/>
+                    <Route path={'/profile'} element={<Profile
+                        posts={props.state.profilePage.posts}
+                        addPost={props.addPost}/>}/>
                 </Routes>
             </div>
         </div>

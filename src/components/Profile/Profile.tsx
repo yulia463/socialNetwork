@@ -5,14 +5,17 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 import {PostType} from "../../index";
 
 type ProfileProps = {
-    posts: Array <PostType>
+    posts: Array<PostType>
+    addPost: (postMessage: any) => void
 }
 
 const Profile = (props: ProfileProps) => {
 
     return <div>
         <ProfileInfo/>
-        <MyPosts posts={props.posts} id={5} message={'ksks'} likesCount={84}/>
+        <MyPosts
+            addPost={props.addPost}
+            posts={props.posts} id={5} message={'ksks'} likesCount={84}/>
     </div>
 
 };
