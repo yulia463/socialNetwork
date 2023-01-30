@@ -15,7 +15,8 @@ const Profile = (props: ProfileProps) => {
         <ProfileInfo/>
         <MyPosts
             addPost={props.addPost}
-            posts={props.posts} id={5} message={'ksks'} likesCount={84}/>
+            posts={props.posts}
+        />
     </div>
 
 };

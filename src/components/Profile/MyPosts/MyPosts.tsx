@@ -5,9 +5,9 @@ import {PostType} from "../../../index";
 
 type MyPostsProps = {
     posts: Array<PostType>
-    id: number
-    message: string
-    likesCount: number
+    // id: number
+    // message: string
+    // likesCount: number
     addPost:(postMessage:any)=>void
 }
 
@@ -21,10 +21,8 @@ let [text,setText]=useState('')
 
 
     const addPost = () => {
-        // let text = newPostElement.current.value;
         props.addPost(text);
         setText('');
-        // newPostElement.current.value = '';
 
     }
 
