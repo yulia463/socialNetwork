@@ -12,9 +12,6 @@ type DialogsPropsType={
 
 }
 
-
-
-
 export const Dialogs = (props:DialogsPropsType) => {
 
 

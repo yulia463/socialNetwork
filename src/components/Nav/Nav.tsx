@@ -4,19 +4,41 @@ import {useNavigate} from "react-router-dom";
 
 const Nav = () => {
 
+    const navigate = useNavigate();
+
+
+
+
+    const navigateHandler = (linkName:string) =>{
+        navigate(linkName)
+    }
 
     return <nav className={classes.nav}>
 
-        <div className={classes.item}><a>Profile</a></div>
+        <div  onClick={()=>{navigateHandler("profile")}}
+            className={classes.item}>
+            Profile
+        </div>
 
-        <div className={classes.item}><a>Messenger</a></div>
+        <div
+            onClick={()=>{navigateHandler("dialogs")}}
+            className={classes.item}>
+           Messenger
+        </div>
 
-        <div className={classes.item}><a>New</a></div>
+        <div
+            onClick={()=>{navigateHandler("new")}}
+            className={classes.item}>New</div>
 
-        <div className={classes.item}><a>Music</a></div>
+        <div
+            onClick={()=>{navigateHandler("music")}}
+            className={classes.item}>Music</div>
 
-        <div className={classes.item}><a>Settings</a></div>
+        <div
+            onClick={()=>{navigateHandler("setting")}}
+            className={classes.item}>Settings</div>
     </nav>
 };
+
 
 export default Nav;
