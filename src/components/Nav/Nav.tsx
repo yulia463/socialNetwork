@@ -5,9 +5,7 @@ import {useNavigate} from "react-router-dom";
 const Nav = () => {
 
     const navigate = useNavigate();
-
-
-
+// объявляем функцию навигейст с помощью хука useNavigate
 
     const navigateHandler = (linkName:string) =>{
         navigate(linkName)
@@ -39,6 +37,17 @@ const Nav = () => {
             className={classes.item}>Settings</div>
     </nav>
 };
+/*
+ 1 мы выбираем компоненту к торой хотим достучаться . Например мессадж и вместо тега <a> удаляем за ненадобъесть и используем оnClick
+ 2 cоздаем функцию navigateHandler и описываем внутриностти
+   const navigateHandler = (linkName:string) =>{
+        setLink(linkName)
+    }
+    onClick={()=>{navigateHandler("dialogs")}}
 
+     в функцию вызываемую в  онклике прокидываем аргумент из фунцкции -это имя роута
+   3 прокидываем он клик на все прокидываем все дивки по аналогии
+     4 теперь переходим в файл арр
+ */
 
 export default Nav;
