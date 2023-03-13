@@ -19,9 +19,8 @@ let state: StateType = {
     profilePage: {
         posts: [
             {id: 1, message: "my first post", likesCount: 12},
-            {id: 2, message: "who will win ?", likesCount: 11},
-            {id: 3, message: "It was always scary to move to the next level. But maybe it will change your life", likesCount: 11},
-            {id: 4, message: "our flag has white snow and a blue river", likesCount: 11},
+            {id: 2, message: "how are you ?", likesCount: 11},
+            {id: 3, message: "put likes", likesCount: 17}
         ]
     },
     messagesPage: {
