@@ -17,9 +17,6 @@ let [text,setText]=useState('')
     let postsElements =
         props.posts.map((p) => <Post likesCount={p.likesCount} title={p.message}/>)
 
-
-
-
     const addPost = () => {
         props.addPost(text);
         setText('');
@@ -30,7 +27,7 @@ let [text,setText]=useState('')
         <h3>My Posts</h3>
         <div>
             <div>
-                <textarea value={text} onChange={(e)=>{setText(e.currentTarget.value)}} ></textarea>
+                <textarea value={text} onChange={(e)=>{setText(e.currentTarget.value)}} />
             </div>
             <div>
                 <button onClick={addPost}>Add post</button>

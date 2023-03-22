@@ -13,32 +13,20 @@ const Nav = () => {
 
     return <nav className={classes.nav}>
 
-        <div  onClick={()=>{navigateHandler("profile")}}
-            className={classes.item}>
-            Profile
-        </div>
+        <div onClick={()=>{navigateHandler("profile")}} className={classes.item}>Profile</div>
 
-        <div
-            onClick={()=>{navigateHandler("dialogs")}}
-            className={classes.item}>
-           Messenger
-        </div>
+        <div onClick={()=>{navigateHandler("dialogs")}} className={classes.item}>Messenger</div>
 
-        <div
-            onClick={()=>{navigateHandler("new")}}
-            className={classes.item}>New</div>
+        <div onClick={()=>{navigateHandler("new")}} className={classes.item}>New</div>
 
-        <div
-            onClick={()=>{navigateHandler("music")}}
-            className={classes.item}>Music</div>
+        <div onClick={()=>{navigateHandler("music")}} className={classes.item}>Music</div>
 
-        <div
-            onClick={()=>{navigateHandler("setting")}}
-            className={classes.item}>Settings</div>
+        <div onClick={()=>{navigateHandler("setting")}} className={classes.item}>Settings</div>
     </nav>
 };
 /*
- 1 мы выбираем компоненту к торой хотим достучаться . Например мессадж и вместо тега <a> удаляем за ненадобъесть и используем оnClick
+ 1 мы выбираем компоненту к которой хотим достучаться . Например мессадж
+  и вместо тега <a> удаляем за ненадобъесть и используем оnClick
  2 cоздаем функцию navigateHandler и описываем внутриностти
    const navigateHandler = (linkName:string) =>{
         setLink(linkName)
