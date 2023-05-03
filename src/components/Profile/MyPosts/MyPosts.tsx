@@ -12,7 +12,9 @@ type MyPostsProps = {
 }
 
 const MyPosts = (props: MyPostsProps) => {
-let [text,setText]=useState('')
+
+
+     let [text,setText]=useState('')
 
     let postsElements =
         props.posts.map((p) => <Post likesCount={p.likesCount} title={p.message}/>)

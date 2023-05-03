@@ -1,6 +1,5 @@
 import React from "react";
 import {DialogType, MessageType, PostType} from "../../index";
-import exp from "constants";
 import {rerenderEntireTree} from "../../render";
 
 export type StateType = {

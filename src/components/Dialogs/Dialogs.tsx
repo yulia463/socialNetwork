@@ -26,18 +26,7 @@ export const Dialogs = (props:DialogsPropsType) => {
                       )
                   })
                 }
-                {/*вместо этого =>*/}
-                {/*<DialogItem name={dialogsData[0].name} id={dialogsData[0].id}/>*/}
-                {/*<DialogItem name={dialogsData[1].name} id={dialogsData[1].id}/>*/}
-                {/*<DialogItem name={dialogsData[2].name} id={dialogsData[2].id}/>*/}
-                {/*пишем это =>*/}
-                {/*{*/}
-                {/*    dialogsData.map((dialog) =>{*/}
-                {/*        return(*/}
-                {/*            <DialogItem name={dialog.name} id={dialog.id}/>*/}
-                {/*        )*/}
-                {/*    })*/}
-                {/*}*/}
+
 
 
             </div>
@@ -50,8 +39,7 @@ export const Dialogs = (props:DialogsPropsType) => {
                         )
                     })
                 }
-            {/*    <Message message={messagesData[0].message}/>*/}
-            {/*    <Message message={messagesData[1].message}/>*/}
+
 
             </div>
         </div>
